@@ -1,0 +1,46 @@
+﻿@model IEnumerable<banhang.Models.Danhmuc_SP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_SP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia_SP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.San_Pham.Ten_SP)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_SP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia_SP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.San_Pham.Ten_SP)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaSP }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaSP }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaSP })
+        </td>
+    </tr>
+}
+
+</table>

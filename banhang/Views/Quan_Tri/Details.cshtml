@@ -1,0 +1,35 @@
+﻿@model banhang.Models.Quan_Tri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Quan_Tri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mat_Khau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mat_Khau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_Thai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trang_Thai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Tai_Khoan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QL_BANHANGModelStoreContainer" CdmEntityContainer="QL_BANHANGEntities">
+    <EntitySetMapping Name="Danhmuc_SP">
+      <EntityTypeMapping TypeName="QL_BANHANGModel.Danhmuc_SP">
+        <MappingFragment StoreEntitySet="Danhmuc_SP">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Ten_SP" ColumnName="Ten_SP" />
+          <ScalarProperty Name="Gia_SP" ColumnName="Gia_SP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Don_Hangg">
+      <EntityTypeMapping TypeName="QL_BANHANGModel.Don_Hangg">
+        <MappingFragment StoreEntitySet="Don_Hangg">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Don_Gia" ColumnName="Don_Gia" />
+          <ScalarProperty Name="Ngay_Dat" ColumnName="Ngay_Dat" />
+          <ScalarProperty Name="Trang_Thai" ColumnName="Trang_Thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khach_Hang">
+      <EntityTypeMapping TypeName="QL_BANHANGModel.Khach_Hang">
+        <MappingFragment StoreEntitySet="Khach_Hang">
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="Ho_Ten" ColumnName="Ho_Ten" />
+          <ScalarProperty Name="Tai_Khoan" ColumnName="Tai_Khoan" />
+          <ScalarProperty Name="Mat_Khau" ColumnName="Mat_Khau" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Dien_Thoai" ColumnName="Dien_Thoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Trang_Thai" ColumnName="Trang_Thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quan_Tri">
+      <EntityTypeMapping TypeName="QL_BANHANGModel.Quan_Tri">
+        <MappingFragment StoreEntitySet="Quan_Tri">
+          <ScalarProperty Name="Tai_Khoan" ColumnName="Tai_Khoan" />
+          <ScalarProperty Name="Mat_Khau" ColumnName="Mat_Khau" />
+          <ScalarProperty Name="Trang_Thai" ColumnName="Trang_Thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="San_Pham">
+      <EntityTypeMapping TypeName="QL_BANHANGModel.San_Pham">
+        <MappingFragment StoreEntitySet="San_Pham">
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="Ten_SP" ColumnName="Ten_SP" />
+          <ScalarProperty Name="Loai_SP" ColumnName="Loai_SP" />
+          <ScalarProperty Name="Nam_SX" ColumnName="Nam_SX" />
+          <ScalarProperty Name="Trang_Thai" ColumnName="Trang_Thai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

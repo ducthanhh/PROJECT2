@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_BANHANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Danhmuc_SP">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ten_SP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gia_SP" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Don_Hangg">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Don_Gia" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngay_Dat" Type="date" />
+    <Property Name="Trang_Thai" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Khach_Hang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ho_Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tai_Khoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mat_Khau" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dien_Thoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Trang_Thai" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="Quan_Tri">
+    <Key>
+      <PropertyRef Name="Tai_Khoan" />
+    </Key>
+    <Property Name="Tai_Khoan" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mat_Khau" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Trang_Thai" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="San_Pham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Ten_SP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Loai_SP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Nam_SX" Type="nvarchar" MaxLength="50" />
+    <Property Name="Trang_Thai" Type="tinyint" />
+  </EntityType>
+  <Association Name="FK_Danhmuc_SP_San_Pham">
+    <End Role="San_Pham" Type="Self.San_Pham" Multiplicity="1" />
+    <End Role="Danhmuc_SP" Type="Self.Danhmuc_SP" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="San_Pham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Danhmuc_SP">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Don_Hangg_Danhmuc_SP">
+    <End Role="Danhmuc_SP" Type="Self.Danhmuc_SP" Multiplicity="0..1" />
+    <End Role="Don_Hangg" Type="Self.Don_Hangg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc_SP">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="Don_Hangg">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Don_Hangg_Khach_Hang">
+    <End Role="Khach_Hang" Type="Self.Khach_Hang" Multiplicity="1" />
+    <End Role="Don_Hangg" Type="Self.Don_Hangg" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Khach_Hang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="Don_Hangg">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_BANHANGModelStoreContainer">
+    <EntitySet Name="Danhmuc_SP" EntityType="Self.Danhmuc_SP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Don_Hangg" EntityType="Self.Don_Hangg" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khach_Hang" EntityType="Self.Khach_Hang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quan_Tri" EntityType="Self.Quan_Tri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="San_Pham" EntityType="Self.San_Pham" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Danhmuc_SP_San_Pham" Association="Self.FK_Danhmuc_SP_San_Pham">
+      <End Role="San_Pham" EntitySet="San_Pham" />
+      <End Role="Danhmuc_SP" EntitySet="Danhmuc_SP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Don_Hangg_Danhmuc_SP" Association="Self.FK_Don_Hangg_Danhmuc_SP">
+      <End Role="Danhmuc_SP" EntitySet="Danhmuc_SP" />
+      <End Role="Don_Hangg" EntitySet="Don_Hangg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Don_Hangg_Khach_Hang" Association="Self.FK_Don_Hangg_Khach_Hang">
+      <End Role="Khach_Hang" EntitySet="Khach_Hang" />
+      <End Role="Don_Hangg" EntitySet="Don_Hangg" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

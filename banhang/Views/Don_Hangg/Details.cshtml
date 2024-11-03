@@ -1,0 +1,59 @@
+﻿@model banhang.Models.Don_Hangg
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Don_Hangg</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Don_Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Don_Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Dat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Dat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trang_Thai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trang_Thai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Danhmuc_SP.Ten_SP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Danhmuc_SP.Ten_SP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Khach_Hang.Ho_Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Khach_Hang.Ho_Ten)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaKH }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

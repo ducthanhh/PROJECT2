@@ -1,0 +1,43 @@
+﻿@model banhang.Models.Danhmuc_SP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Danhmuc_SP</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_SP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_SP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia_SP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia_SP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.San_Pham.Ten_SP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.San_Pham.Ten_SP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
