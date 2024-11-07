@@ -3,36 +3,116 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" />
+
+    <title>@ViewBag.Title admin</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f3f4; /* Neutral background color for contrast */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #212529;
+            color: #ffffff;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease;
+        }
+
+            .sidebar h2 {
+                font-size: 1.5rem;
+                color: #ffc107; /* Highlighted color */
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .sidebar a {
+                color: #ffffff;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                transition: background-color 0.3s, color 0.3s;
+                font-size: 1rem;
+            }
+
+                .sidebar a:hover {
+                    background-color: #495057;
+                    color: #ffc107;
+                }
+
+            .sidebar .nav-link {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+            background-color: #ffffff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            padding: 15px 0;
+            border-bottom: 2px solid #212529;
+            color: #212529;
+            font-size: 1.75rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            border-top: 2px solid #212529;
+            margin-top: 30px;
+            color: #495057;
+        }
+
+        .body-content {
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
+    <div class="sidebar">
+        <h2>ADMIN</h2>
+        <ul class="navbar-nav">
+          
+
+            <li>@Html.ActionLink("khách hàng", "Index", "Khach_Hang", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("sản phẩm ", "Index", "San_Pham", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("đơn hàng", "Index", "Don_Hangg", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("quản trị", "Index", "Quan_Tri", new { area = "" }, new { @class = "nav-link" })</li>
+            <li>@Html.ActionLink("danh mục sản phẩm", "Index", "Danhmuc_SP", new { area = "" }, new { @class = "nav-link" })</li>
+        </ul>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+    <div class="content">
+        <header>
+            <h1>@ViewBag.Title</h1>
+        </header>
+
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My Web Phim</p>
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
